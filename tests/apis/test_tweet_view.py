@@ -1,6 +1,8 @@
 from flask_testing import TestCase
 from app import create_app
 
+from app.models import Tweet
+
 class TestTweetView(TestCase):
     def create_app(self):
         app = create_app()
@@ -12,3 +14,4 @@ class TestTweetView(TestCase):
         text = response.data.decode()
         print(text)
         self.assertIn("Goodbye", text)
+        
